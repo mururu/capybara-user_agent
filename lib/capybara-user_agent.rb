@@ -1,7 +1,6 @@
-require "capybara-user_agent/version"
+require "capybara"
+require "user_agent"
 
 module Capybara
-  module UserAgent
-    # Your code goes here...
-  end
+  autoload :UserAgent, 'capybara/user_agent'
 end
