@@ -7,8 +7,8 @@ Gem::Specification.new do |gem|
   gem.version       = Capybara::UserAgent::VERSION
   gem.authors       = ["Yuki Ito"]
   gem.email         = ["yuki@gnnk.net"]
-  gem.description   = %q{UserAgent on Capybara}
-  gem.summary       = %q{UserAgent on Capybara}
+  gem.description   = %q{UserAgent DSL on Capybara}
+  gem.summary       = %q{UserAgent DSL on Capybara}
   gem.homepage      = "https://github.com/mururu/capybara-user_agent"
 
   gem.files         = `git ls-files`.split($/)
