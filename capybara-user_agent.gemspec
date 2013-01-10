@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'capybara-user_agent/version'
+$:.push File.expand_path("../lib", __FILE__)
+require 'capybara/user_agent/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "capybara-user_agent"
@@ -16,4 +15,6 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_runtime_dependency("capybara", "~> 2.0", ">= 2.0.2")
 end
