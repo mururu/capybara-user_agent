@@ -1,7 +1,5 @@
 # Capybara::UserAgent
 
-TODO: Write a gem description
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -18,7 +16,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Rspec
+
+in your `spec_helper`
+
+```ruby
+require 'capybara/user_agent'
+
+RSpec.configure do |config|
+  config.include Capybara::UserAgent::DSL
+end
+```
+
+Example:
+
+```ruby
+feature 'your_feature' do
+  context 'iphone' do
+    background do
+      set_user_agent(:iphone)
+    end
+    
+    scenario 'your_scenario' do
+    end
+  end
+
+  context 'ipad' do
+    background do
+      set_user_agent(:ipad) 
+    end
+
+    scenario 'you_scenario' do
+    end
+  end
+end
+```
 
 ## Contributing
 
