@@ -23,6 +23,8 @@ in your `spec_helper`
 ```ruby
 require 'capybara/user_agent'
 
+Capybara::UserAgent.add_user_agents(your_browser: 'your_user_agent/1.0')
+
 RSpec.configure do |config|
   config.include Capybara::UserAgent::DSL
 end
@@ -36,21 +38,45 @@ feature 'your_feature' do
     background do
       set_user_agent(:iphone)
     end
-    
+
     scenario 'your_scenario' do
     end
   end
 
-  context 'ipad' do
+  context 'your_browser' do
     background do
-      set_user_agent(:ipad) 
+      set_user_agent(:your_browser)
     end
 
-    scenario 'you_scenario' do
+    scenario 'your_scenario' do
+    end
+  end
+
+  context 'your_browser2' do
+    background do
+      set_custom_user_agent('your_user_agent/2.0')
+    end
+
+    scenario 'your_scenario' do
     end
   end
 end
 ```
+
+### Now Available UserAgents
+
+* iphone
+* ipod
+* ipad
+* android
+* android_tablet
+* windows_phone
+* black_berry
+* ie7
+* ie8
+* ie9
+* ie10
+* chrome
 
 ## Contributing
 
