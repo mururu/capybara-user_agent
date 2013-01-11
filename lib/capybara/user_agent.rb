@@ -1,11 +1,12 @@
 module Capybara
   module UserAgent
-    autoload :DSL,    'capybara/user_agent/dsl'
-    autoload :Version, 'capybara/user_agent/version'
-
     class << self
       def user_agents
         @user_agents ||= default_user_agents
+      end
+
+      def add_user_agents(agents)
+        user_agents.merge! agents
       end
 
       def default_user_agents
@@ -25,5 +26,8 @@ module Capybara
         }
       end
     end
+
+    autoload :DSL,    'capybara/user_agent/dsl'
+    autoload :Version, 'capybara/user_agent/version'
   end
 end
