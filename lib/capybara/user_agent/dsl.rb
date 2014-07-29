@@ -6,7 +6,17 @@ module Capybara
       end
 
       def set_custom_user_agent(user_agent)
-        Capybara.current_session.driver.header('User-Agent', user_agent)
+        if driver.respond_to?(:add_headers)
+          driver.add_headers('User-Agent' => user_agent)
+        else
+          driver.header('User-Agent', user_agent)
+        end
+      end
+
+      private
+
+      def driver
+        Capybara.current_session.driver
       end
     end
   end
