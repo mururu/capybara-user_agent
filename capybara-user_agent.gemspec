@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{UserAgent DSL on Capybara}
   gem.summary       = %q{UserAgent DSL on Capybara}
   gem.homepage      = "https://github.com/mururu/capybara-user_agent"
+  gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
